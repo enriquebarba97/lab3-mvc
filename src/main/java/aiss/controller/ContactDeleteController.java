@@ -27,26 +27,12 @@ public class ContactDeleteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Request data
-		String id = request.getParameter("id");
+		// TODO: Delete contact
 		
-		// Validate data
-		if (id==null) {
-			log.log(Level.SEVERE, "Error deleting contact. Null id ");
-			request.getRequestDispatcher("/error.jsp").forward(request, response);
-			return;
-		}
 		
-		// Log
-		log.log(Level.FINE, "Deleting contact with id " + id);
-		
-		// Contact repository
-		ContactRepository repository = ContactRepository.getInstance();
-		repository.deleteContact(id);
-		
-		// Forward to contact list view
+		// TODO: Forward to contact list view
 		request.setAttribute("message", "Contact deleted successfully");
-		request.getRequestDispatcher("/contactlist").forward(request, response);
+		
 	}
 
 

@@ -19,8 +19,8 @@
 				<tr>
 					<td><c:out value="${entry.value.name}" /></td>
 					<td><c:out value="${entry.value.telephone}" /></td>
-					<td><a href="contactupdate?id=${entry.key}"><img src="./images/edit.png" width="30px"></a> 
-						<a href="contactdelete?id=${entry.key}"><img src="./images/delete.png" width="30px"></a></td>
+					<td><a href="contactupdate?id=${entry.value.id}"><img src="./images/edit.png" width="30px"></a> 
+						<a href="contactdelete?id=${entry.value.id}"><img src="./images/delete.png" width="30px"></a></td>
 				</tr>
 			</c:forEach>
 		</table>

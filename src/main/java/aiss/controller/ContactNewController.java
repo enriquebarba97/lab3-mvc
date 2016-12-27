@@ -28,20 +28,15 @@ public class ContactNewController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		// Request data
-		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
+		// TODO: Read request parameters
 		
-		// Create contact
-		ContactRepository repository = ContactRepository.getInstance();
-		repository.addContact(name, phone);
-	
-		// Log
-		log.log(Level.FINE, "Update request. Name=" + name + ", Telephone= " + phone + ". Forwarding to contact list view.");
+		
+		// TODO: Create contact in the repository
+		
 
-		// Forward to contact list view
+		// TODO: Forward to contact list view
 		request.setAttribute("message", "Contact created successfully");
-		request.getRequestDispatcher("/contactlist").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
