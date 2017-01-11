@@ -15,13 +15,13 @@
 		<form action="<%= controller %>" method="post">
 	
 			<label for="name">Name: </label> 
-			<input id="name" name="name" type="text" required="required" value="${contact.name}"></input> 
+			<input id="name" name="name" type="text" required="required" value="${contact.name}">
 			
 			<label for="phone">Phone: </label> 
-			<input id="phone" name="phone" type="text" pattern="\d{9}" required="required" value="${contact.telephone}"></input>
+			<input id="phone" name="phone" type="text" pattern="\d{9}" required="required" value="${contact.telephone}">
 			
 			<c:if test="${not empty contact}">
-				<input name="id" type="hidden" value="${contact.id}"></input>
+				<input name="id" type="hidden" value="${contact.id}">
 			</c:if>
 	
 			<div class="bottom_links">
