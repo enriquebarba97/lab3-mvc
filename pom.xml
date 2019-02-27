@@ -127,6 +127,14 @@
 			<artifactId>google-oauth-client-servlet</artifactId>
 			<version>${google.client.version}</version>
 		</dependency>
+		
+		<!-- Jetty Logging dependency -->
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>apache-jsp</artifactId>
+		    <version>9.4.15.v20190215</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
