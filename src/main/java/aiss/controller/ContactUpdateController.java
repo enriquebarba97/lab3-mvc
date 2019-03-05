@@ -32,6 +32,21 @@ public class ContactUpdateController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// TODO
+		ContactRepository repository = ContactRepository.getInstance();
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		Contact contacto = repository.getContact(id);
+		if(name == null && phone == null) {
+			request.setAttribute("contact", contacto);
+			request.getRequestDispatcher("/contactEditView.jsp").forward(request, response);;
+		}else {
+			contacto.setName(name);
+			contacto.setTelephone(phone);
+			repository.updateContact(contacto);
+			request.setAttribute("message", "Contact updated successfully");
+			request.getRequestDispatcher("/contactlist").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

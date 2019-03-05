@@ -29,10 +29,12 @@ public class ContactDeleteController extends HttpServlet {
 		
 		// TODO: Delete contact
 		
+		ContactRepository repository = ContactRepository.getInstance();
+		repository.deleteContact(request.getParameter("id"));
 		
 		// TODO: Forward to contact list view
 		request.setAttribute("message", "Contact deleted successfully");
-		
+		request.getRequestDispatcher("/contactlist").forward(request, response);
 	}
 
 

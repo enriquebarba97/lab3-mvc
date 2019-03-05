@@ -29,14 +29,19 @@ public class ContactNewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		// TODO: Read request parameters
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
 		
+		if(name == null || phone == null)
+			request.getRequestDispatcher("/error.jsp").forward(request, response);
 		
 		// TODO: Create contact in the repository
-		
+		ContactRepository repository = ContactRepository.getInstance();
+		repository.addContact(name, phone);
 
 		// TODO: Forward to contact list view
 		request.setAttribute("message", "Contact created successfully");
-		
+		request.getRequestDispatcher("/contactlist").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
